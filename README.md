@@ -1,1 +1,1 @@
-# remind-extension-angular2
+# remind-extension
