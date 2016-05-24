@@ -1,26 +1,63 @@
-<button md-raised-button color="primary">PRIMARY</button>
-<button md-raised-button color="accent">ACCENT</button>
-<button md-raised-button color="warn">WARN</button>
+<div class="rm-app">
+  <md-sidenav-layout class="demo-root" fullscreen>
+    <md-sidenav #start>
+      <md-nav-list>
+        <a md-list-item>Button</a>
+        <a md-list-item>Card</a>
+      </md-nav-list>
+    </md-sidenav>
+    <div>
+      <md-toolbar color="primary">
+        <button md-icon-button>
+          <md-icon class="md-24" >menu</md-icon>
+        </button>
+        <div class="demo-toolbar">
+          <h1>ReMind</h1>
+        </div>
+      </md-toolbar>
 
-<hr>
+      <main class="rm-content">
+        <button md-raised-button color="primary">PRIMARY</button>
+        <button md-raised-button color="accent">ACCENT</button>
+        <button md-raised-button color="warn">WARN</button>
 
-<md-checkbox *ngFor="let todo of todos" [checked]="todo.completed"
-             (change)="todo.completed = $event">
-  {{todo.name}}
-</md-checkbox>
+        <hr>
 
-<md-progress-circle mode="determinate" value="75"></md-progress-circle>
+        <md-checkbox *ngFor="let todo of todos" [checked]="todo.completed"
+                     (change)="todo.completed = $event">
+          {{todo.name}}
+        </md-checkbox>
 
-<md-progress-circle mode="indeterminate" color="primary"></md-progress-circle>
-<md-progress-circle mode="indeterminate" color="accent"></md-progress-circle>
-<md-progress-circle mode="indeterminate" color="warn"></md-progress-circle>
+        <md-progress-circle mode="determinate" value="75"></md-progress-circle>
 
-<code>
-  https://www.youtube.com/watch?v=ngkVXUCBozc
-  https://www.youtube.com/watch?v=9w7NLvJTCcU
+        <md-progress-circle mode="indeterminate" color="accent"></md-progress-circle>
+        <md-progress-circle mode="indeterminate" color="warn"></md-progress-circle>
 
-  https://github.com/angular/material2/blob/master/CHANGELOG.md
-  https://github.com/angular/material2/tree/master/src/components/checkbox
 
-  https://github.com/timjacobi/angular2-education
-</code>
+        <div class="demo-toolbar">
+
+          <p>
+            <md-toolbar>
+              <md-icon class="demo-toolbar-icon">menu</md-icon>
+              <span>Default Toolbar</span>
+
+              <span class="demo-fill-remaining"></span>
+
+              <md-icon>code</md-icon>
+            </md-toolbar>
+          </p>
+
+        </div>
+
+        <code>
+          <a href="https://www.youtube.com/watch?v=ngkVXUCBozc">https://www.youtube.com/watch?v=ngkVXUCBozc</a>
+          <a href="https://www.youtube.com/watch?v=9w7NLvJTCcU">https://www.youtube.com/watch?v=9w7NLvJTCcU</a>
+          <a href="https://github.com/angular/material2/blob/master/CHANGELOG.md">https://github.com/angular/material2/blob/master/CHANGELOG.md</a>
+          <a href="https://github.com/angular/material2/tree/master/src/components/checkbox">https://github.com/angular/material2/tree/master/src/components/checkbox</a>
+          <a href="https://github.com/timjacobi/angular2-education">https://github.com/timjacobi/angular2-education</a>
+        </code>
+
+      </main>
+    </div>
+  </md-sidenav-layout>
+</div>
