@@ -31,17 +31,5 @@ import {MdToolbar} from '@angular2-material/toolbar';
 })
 
 export class AppComponent {
-    todos = [
-        {
-            completed: false,
-            name: 'One'
-        }, {
-            completed: false,
-            name: 'Second'
-        }, {
-            completed: false,
-            name: 'Third'
-        },
-
-    ];
+    
 }
