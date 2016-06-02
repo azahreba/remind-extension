@@ -1,5 +1,6 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {HTTP_PROVIDERS} from '@angular/http';
+import {RouteConfig, ROUTER_PROVIDERS} from "@angular/router-deprecated";
 
 import {MdButton} from '@angular2-material/button';
 import {MdCard} from '@angular2-material/card';
@@ -10,6 +11,10 @@ import {MdProgressCircle, MdSpinner} from '@angular2-material/progress-circle';
 import {MD_SIDENAV_DIRECTIVES} from '@angular2-material/sidenav';
 import {MD_LIST_DIRECTIVES} from '@angular2-material/list';
 import {MdToolbar} from '@angular2-material/toolbar';
+
+import {DashboardComponent} from "./dashboard.component";
+import {ProjectsComponent} from "./projects.component";
+
 
 @Component({
     selector: 'rm-app',
@@ -27,9 +32,14 @@ import {MdToolbar} from '@angular2-material/toolbar';
         MdToolbar
     ],
     styleUrls: ['app/components/app.component.css'],
-    providers: [HTTP_PROVIDERS, MdIconRegistry]
+    providers: [HTTP_PROVIDERS, ROUTER_PROVIDERS, MdIconRegistry]
 })
+@RouteConfig([
+    { path: '/dashboard', name: 'Dashboard', component: DashboardComponent, useAsDefault: true },
+    { path: '/tasks/...', name: 'Projects', component: ProjectsComponent }
+])
 
-export class AppComponent {
-    
+export class AppComponent implements OnInit {
+    ngOnInit() {
+    }
 }

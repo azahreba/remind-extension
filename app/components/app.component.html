@@ -18,12 +18,23 @@
 
       <main class="rm-content">
 
+        <nav>
+          <a [routerLink]="['Dashboard']"></a>
+          <a [routerLink]="['Tasks']"></a>
+        </nav>
+
+        <router-outlet></router-outlet>
 
         <hr>
 
-        <md-checkbox *ngFor="let todo of todos" [checked]="todo.completed"
-                     (change)="todo.completed = $event">
-          {{todo.name}}
+        <!--<md-checkbox *ngFor="let task of tasks" [checked]="task.completed"-->
+                     <!--(change)="task.completed = $event">-->
+          <!--{{task.title}}-->
+        <!--</md-checkbox>-->
+
+        <md-checkbox *ngFor="let task of tasks | async" [checked]="task.completed"
+                     (change)="task.completed = $event">
+          {{task.title}}
         </md-checkbox>
 
         <md-spinner></md-spinner>
