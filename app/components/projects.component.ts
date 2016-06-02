@@ -5,7 +5,7 @@ import {Observable} from "rxjs/Rx";
 import {MdButton} from '@angular2-material/button';
 import {MdCheckbox} from '@angular2-material/checkbox';
 
-import {Task, TaskService} from "../services/task.service";
+import {ITask, TaskService} from "../services/task.service";
 
 
 @Component({
@@ -34,7 +34,7 @@ export class ProjectsComponent implements OnInit {
 
     //if you don't need to handle an error - use async
     //async works with Promises
-    tasks: Observable<Task[]>;
+    tasks: Observable<ITask[]>;
 
     constructor(private _taskService: TaskService) {}
     

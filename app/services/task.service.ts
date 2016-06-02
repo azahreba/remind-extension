@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {Http, Response} from "@angular/http";
 import {Observable} from "rxjs/Rx";
 
-export interface Task {
+export interface ITask {
     title: string;
     completed: boolean;
 }
@@ -13,7 +13,7 @@ export class TaskService {
 
     getTasks() {
         return this._http.get('app/mocks/tasks.json')
-            .map((response: Response) => <Task[]>response.json().data)
+            .map((response: Response) => <ITask[]>response.json().data)
             .do(data => console.log(data))
             .catch(this.handleError);
     }

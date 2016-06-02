@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 
 @Component({
     selector: 'rm-dashboard',
-    templateUrl: '',
+    templateUrl: 'app/components/dashboard.component.html',
     directives: [],
     styleUrls: [''],
     providers: []

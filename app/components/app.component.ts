@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {HTTP_PROVIDERS} from '@angular/http';
-import {RouteConfig, ROUTER_PROVIDERS} from "@angular/router-deprecated";
+import {RouteConfig, ROUTER_PROVIDERS, ROUTER_DIRECTIVES} from "@angular/router-deprecated";
 
 import {MdButton} from '@angular2-material/button';
 import {MdCard} from '@angular2-material/card';
@@ -29,14 +29,16 @@ import {ProjectsComponent} from "./projects.component";
         MD_SIDENAV_DIRECTIVES,
         MD_LIST_DIRECTIVES,
         MdSpinner,
-        MdToolbar
+        MdToolbar,
+
+        ROUTER_DIRECTIVES
     ],
     styleUrls: ['app/components/app.component.css'],
     providers: [HTTP_PROVIDERS, ROUTER_PROVIDERS, MdIconRegistry]
 })
 @RouteConfig([
     { path: '/dashboard', name: 'Dashboard', component: DashboardComponent, useAsDefault: true },
-    { path: '/tasks/...', name: 'Projects', component: ProjectsComponent }
+    { path: '/projects/...', name: 'Projects', component: ProjectsComponent }
 ])
 
 export class AppComponent implements OnInit {
