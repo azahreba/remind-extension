@@ -10,12 +10,12 @@ import {ITask, TaskService} from "../services/task.service";
 
 @Component({
     selector: 'rm-app',
-    templateUrl: 'app/components/app.component.html',
+    templateUrl: 'app/components/projects.component.html',
     directives: [
         MdButton,
         MdCheckbox
     ],
-    styleUrls: ['app/components/app.component.css'],
+    styleUrls: [''],
     providers: [HTTP_PROVIDERS, TaskService]
 })
 

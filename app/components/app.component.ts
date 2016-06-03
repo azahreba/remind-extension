@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
+import {ROUTER_PROVIDERS, ROUTER_DIRECTIVES, RouteConfig} from "@angular/router-deprecated";
 import {HTTP_PROVIDERS} from '@angular/http';
-import {RouteConfig, ROUTER_PROVIDERS, ROUTER_DIRECTIVES} from "@angular/router-deprecated";
 
 import {MdButton} from '@angular2-material/button';
 import {MdCard} from '@angular2-material/card';
@@ -15,30 +15,25 @@ import {MdToolbar} from '@angular2-material/toolbar';
 import {DashboardComponent} from "./dashboard.component";
 import {ProjectsComponent} from "./projects.component";
 
-
 @Component({
     selector: 'rm-app',
     templateUrl: 'app/components/app.component.html',
     directives: [
         MdButton,
-        MdCard,
-        MdCheckbox,
         MdIcon,
-        MdInput,
-        MdProgressCircle,
-        MD_SIDENAV_DIRECTIVES,
         MD_LIST_DIRECTIVES,
-        MdSpinner,
+        MD_SIDENAV_DIRECTIVES,
         MdToolbar,
 
         ROUTER_DIRECTIVES
     ],
-    styleUrls: ['app/components/app.component.css'],
-    providers: [HTTP_PROVIDERS, ROUTER_PROVIDERS, MdIconRegistry]
+    providers: [HTTP_PROVIDERS, ROUTER_PROVIDERS, MdIconRegistry],
+    styleUrls: ['app/components/app.component.css']
 })
+
 @RouteConfig([
     { path: '/dashboard', name: 'Dashboard', component: DashboardComponent, useAsDefault: true },
-    { path: '/projects/...', name: 'Projects', component: ProjectsComponent }
+    { path: '/projects', name: 'Projects', component: ProjectsComponent }
 ])
 
 export class AppComponent implements OnInit {

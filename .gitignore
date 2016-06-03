@@ -6,7 +6,6 @@ link-checker-results.txt
 **/*npm-debug.log.*
 *.js
 *.js.map
-*.css
 _test-output
 _temp
 

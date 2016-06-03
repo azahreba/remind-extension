@@ -1,27 +1,65 @@
-.demo-toolbar {
-    padding: 6px;
-}
-
-.demo-toolbar-icon {
-    padding: 6px;
-    padding: 0 14px 0 14px;
-}
-
-.demo-fill-remaining {
-    padding: 6px;
-    flex: 1 1 auto;
-}
-
 .rm-app {
     width: 500px;
     height: 800px;
     overflow: hidden;
 }
 
-.rm-content {
-    padding: 24px;
+.rm-toolbar {
+    padding: 6px;
+}
+
+.rm-toolbar-icon {
+    padding: 6px;
+    padding: 0 14px 0 14px;
+}
+
+.rm-fill-remaining {
+    padding: 6px;
+    flex: 1 1 auto;
 }
 
 .rm-link {
     display: inline-block;
+}
+
+.rm-root {
+    font-family: Roboto, 'Helvetica Neue', sans-serif;
+}
+
+.rm-root * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.rm-root md-sidenav {
+    min-width: 15%;
+}
+
+.rm-root md-sidenav [md-button] {
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    margin: 24px 0;
+}
+
+.rm-root .rm-content {
+    padding: 24px;
+}
+
+.rm-root md-toolbar md-icon {
+    cursor: pointer;
+}
+
+.rm-root md-toolbar .rm-toolbar {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.rm-root h1 {
+    font-size: 20px;
 }

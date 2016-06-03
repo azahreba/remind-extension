@@ -1,0 +1,19 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "abbr": "PMC",
+      "title": "Project Management Center"
+    },
+    {
+      "id": 2,
+      "abbr": "PKUP",
+      "title": "Increased Tax Deductible Expenses"
+    },
+    {
+      "id": 3,
+      "abbr": "TB",
+      "title": "Team Building"
+    }
+  ]
+}

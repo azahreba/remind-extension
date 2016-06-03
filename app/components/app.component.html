@@ -1,44 +1,31 @@
 <div class="rm-app">
-  <md-sidenav-layout class="demo-root" fullscreen>
+  <md-sidenav-layout class="rm-root" fullscreen>
+
     <md-sidenav #start>
       <md-nav-list>
-        <a md-list-item>Button</a>
-        <a md-list-item>Card</a>
+        <a md-list-item [routerLink]="['Dashboard']">Dashboard</a>
+        <a md-list-item [routerLink]="['Projects']">Projects</a>
       </md-nav-list>
+      <button md-button (click)="start.close()">CLOSE</button>
     </md-sidenav>
+
     <div>
+
       <md-toolbar color="primary">
-        <button md-icon-button>
+        <button md-icon-button (click)="start.open()">
           <md-icon class="md-24" >menu</md-icon>
         </button>
-        <div class="demo-toolbar">
-          <h3>ReMind</h3>
+        <div class="rm-toolbar">
+          <h1>ReMind</h1>
         </div>
       </md-toolbar>
 
       <main class="rm-content">
-
-        <nav>
-          <a [routerLink]="['Dashboard']"></a>
-          <a [routerLink]="['Tasks']"></a>
-        </nav>
-
-        <section><router-outlet></router-outlet></section>
+        <section>
+          <router-outlet></router-outlet>
+        </section>
 
         <hr>
-
-        <!--<md-checkbox *ngFor="let task of tasks" [checked]="task.completed"-->
-                     <!--(change)="task.completed = $event">-->
-          <!--{{task.title}}-->
-        <!--</md-checkbox>-->
-
-        <md-checkbox *ngFor="let task of tasks | async" [checked]="task.completed"
-                     (change)="task.completed = $event">
-          {{task.title}}
-        </md-checkbox>
-
-        <md-spinner></md-spinner>
-
         <code>
           <a href="https://www.youtube.com/watch?v=ngkVXUCBozc">https://www.youtube.com/watch?v=ngkVXUCBozc</a>
           <a href="https://www.youtube.com/watch?v=9w7NLvJTCcU">https://www.youtube.com/watch?v=9w7NLvJTCcU</a>

@@ -3,8 +3,9 @@ import {Http, Response} from "@angular/http";
 import {Observable} from "rxjs/Rx";
 
 export interface ITask {
-    title: string;
     completed: boolean;
+    title: string;
+    projectName: string;
 }
 
 @Injectable()
