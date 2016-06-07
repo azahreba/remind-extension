@@ -3,8 +3,8 @@
 
     <md-sidenav #start>
       <md-nav-list>
-        <a md-list-item [routerLink]="['Dashboard']">Dashboard</a>
-        <a md-list-item [routerLink]="['Projects']">Projects</a>
+        <a md-list-item [routerLink]="['Dashboard']" (click)="start.close()">Dashboard</a>
+        <a md-list-item [routerLink]="['Projects']" (click)="start.close()">Projects</a>
       </md-nav-list>
       <button md-button (click)="start.close()">CLOSE</button>
     </md-sidenav>
@@ -16,7 +16,7 @@
           <md-icon class="md-24" >menu</md-icon>
         </button>
         <div class="rm-toolbar">
-          <h1>ReMind</h1>
+          <h1>ReMind - {{currentRouteName}}</h1>
         </div>
       </md-toolbar>
 
@@ -24,16 +24,6 @@
         <section>
           <router-outlet></router-outlet>
         </section>
-
-        <hr>
-        <code>
-          <a href="https://www.youtube.com/watch?v=ngkVXUCBozc">https://www.youtube.com/watch?v=ngkVXUCBozc</a>
-          <a href="https://www.youtube.com/watch?v=9w7NLvJTCcU">https://www.youtube.com/watch?v=9w7NLvJTCcU</a>
-          <a href="https://github.com/angular/material2/blob/master/CHANGELOG.md">https://github.com/angular/material2/blob/master/CHANGELOG.md</a>
-          <a href="https://github.com/angular/material2/tree/master/src/components/checkbox">https://github.com/angular/material2/tree/master/src/components/checkbox</a>
-          <a href="https://github.com/timjacobi/angular2-education">https://github.com/timjacobi/angular2-education</a>
-        </code>
-
       </main>
     </div>
   </md-sidenav-layout>

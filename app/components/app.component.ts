@@ -1,5 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {ROUTER_PROVIDERS, ROUTER_DIRECTIVES, RouteConfig} from "@angular/router-deprecated";
+import {
+    ROUTER_PROVIDERS, ROUTER_DIRECTIVES,
+    Route, Router, RouteConfig
+} from "@angular/router-deprecated";
 import {HTTP_PROVIDERS} from '@angular/http';
 
 import {MdButton} from '@angular2-material/button';
@@ -32,11 +35,30 @@ import {ProjectsComponent} from "./projects.component";
 })
 
 @RouteConfig([
-    { path: '/dashboard', name: 'Dashboard', component: DashboardComponent, useAsDefault: true },
-    { path: '/projects', name: 'Projects', component: ProjectsComponent }
+    {
+        path: '/dashboard',
+        name: 'Dashboard',
+        component: DashboardComponent,
+        useAsDefault: true
+    },
+    {
+        path: '/projects',
+        name: 'Projects',
+        component: ProjectsComponent
+    }
 ])
 
 export class AppComponent implements OnInit {
+    currentRouteName:string;
+
+    constructor(private _router:Router) {
+    }
+
     ngOnInit() {
+        this._router.subscribe(() => this._setRoutename());
+    }
+
+    private _setRoutename() {
+        this.currentRouteName = this._router.currentInstruction.component.routeName;
     }
 }
